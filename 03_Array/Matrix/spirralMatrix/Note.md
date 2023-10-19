@@ -2,6 +2,7 @@
 
 ![SpiralMatrix3-2023-10-18-1225](https://github.com/murali-1999/learning_DSA/assets/71452201/6b4f4d10-9209-4b5d-b1b9-0bb69b6e70b1)
 
+```
 public class SpiralMatrix {
     public static int[] spiralMatrix(int [][]MATRIX) {
         int rowStart = 0, rowEnd = MATRIX.length-1;
@@ -69,6 +70,7 @@ public class SpiralMatrix {
         System.out.println();
     }
 }
+```
 
 Time Complexity: O(n x m) all the elements are traversed only once here.
 
