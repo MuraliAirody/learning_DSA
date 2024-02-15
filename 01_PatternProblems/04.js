@@ -45,3 +45,61 @@ function print(n){
 }
 
 print(6)
+
+console.log("------------------------------------------------------------");
+
+
+function printPattern(n) {
+    let space = 0;
+    // Print upper half
+    for (let i = 1; i <= n; i++) {
+        let str = "*".repeat(n - i + 1) + " ".repeat(space) + "*".repeat(n - i + 1);
+        space += 2;
+        console.log(str);
+    }
+    
+    space = n * 2 - 2;
+    // Print lower half
+    for (let i = 1; i <= n; i++) {
+        let str = "*".repeat(i) + " ".repeat(space) + "*".repeat(i);
+        space -= 2;
+        console.log(str);
+    }
+}
+
+printPattern(6);
+
+console.log("------------------------------------------------------------");
+
+// *          *
+// **        **
+// ***      ***
+// ****    ****
+// *****  *****
+// ************
+// *****  *****
+// ****    ****
+// ***      ***
+// **        **
+// *          *
+
+
+function printPattern(n) {
+    let space = n * 2 - 2;
+    
+    // Print upper half
+    for (let i = 1; i <= n; i++) {
+        let str = "*".repeat(i) + " ".repeat(space) + "*".repeat(i);
+        space -= 2;
+        console.log(str);
+    }
+    space = 2;
+    // Print lower half
+    for (let i = n-1; i >= 1; i--) {
+        let str = "*".repeat(i) + " ".repeat(space) + "*".repeat(i);
+        space += 2;
+        console.log(str);
+    }
+}
+
+printPattern(6);
