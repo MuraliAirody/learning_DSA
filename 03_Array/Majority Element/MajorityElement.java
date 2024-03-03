@@ -1,3 +1,4 @@
+import java.util.HashMap;
 
 public class MajorityElement {
     public static void main(String args[]) {
@@ -23,6 +24,18 @@ public class MajorityElement {
     // } 
     public static int majorityElement(int []v) {
        
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        for(int i=0;i<v.length;i++){
+            int count = map.getOrDefault(v[i], 0);
+            map.put(v[i],count+1);
+        }
+
+        for(int i=0;i<v.length;i++){
+           if(map.get(v[i])>v.length/2)
+             return v[i];
+        }
+
         return -1;
 
     } 
