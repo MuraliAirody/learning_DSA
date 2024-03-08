@@ -54,7 +54,6 @@ public class ReverseWordInString {
 // }
 // }
 
-
 class Solution {
     public String reverseWords(String s) {
         int left = 0;
@@ -62,7 +61,7 @@ class Solution {
 
         String temp = "";
         String ans = "";
-        
+
         while (left <= right) {
             char ch = s.charAt(left);
             if (ch != ' ') {
@@ -79,7 +78,7 @@ class Solution {
             }
             left++;
         }
-        
+
         // Adding the last word if it exists
         if (!temp.isEmpty()) {
             if (!ans.isEmpty()) {
@@ -92,6 +91,7 @@ class Solution {
         return ans;
     }
 }
+
 class Solution {
     public String reverseWords(String s) {
         int left = 0;
@@ -99,7 +99,7 @@ class Solution {
 
         StringBuilder temp = new StringBuilder();
         StringBuilder ans = new StringBuilder();
-        
+
         while (left <= right) {
             char ch = s.charAt(left);
             if (ch != ' ') {
@@ -116,7 +116,7 @@ class Solution {
             }
             left++;
         }
-        
+
         // Adding the last word if it exists
         if (temp.length() > 0) {
             if (ans.length() > 0) {
@@ -129,4 +129,3 @@ class Solution {
         return ans.toString();
     }
 }
-
