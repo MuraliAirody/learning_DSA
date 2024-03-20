@@ -55,9 +55,45 @@ class Solution {
 
         // 4- Find the max age of student
 
-        Student st = list.stream().max((student1,student2)->student1.getAge()>student2.getAge()?1:-1).get();
+        Student st = list.stream().max((student1, student2) -> student1.getAge() > student2.getAge() ? 1 : -1).get();
 
         System.out.println(st.getFirstName());
+
+        System.out.println();
+
+        // 5- Find all departments names
+        List<String> names = list.stream().map(std -> std.getDepartmantName()).distinct().collect(Collectors.toList());
+
+        System.out.println(names.toString());
+
+        System.out.println();
+
+        // 6- Find the count of student in each department
+
+        Map<String, Long> depart = list.stream()
+                .collect(Collectors.groupingBy(std -> std.getDepartmantName(), Collectors.counting()));
+
+        for (Map.Entry m : depart.entrySet()) {
+            System.out.println(m.getKey() + " " + m.getValue());
+        }
+
+        System.out.println();
+
+        // 7- Find the list of students whose age is less than 30
+
+        List<Student> li = list.stream().filter(student->student.getAge()>30).collect(Collectors.toList());
+        System.out.println(li);
+
+        System.out.println();
+
+        // 8- Find the list of students whose rank is in between 50 and 100
+        List<Student> liStudents = list.stream().filter(student->(student.getAge()>=50&&student.getAge()<=100)).collect(Collectors.toList());
+        System.out.println(liStudents);
+
+        System.out.println();
+
+        // 9- Find the average age of male and female students
+
     }
 }
 
