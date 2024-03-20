@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.swing.RowFilter.Entry;
+
 public class Interview {
     public static void main(String[] args) {
         List<Student> list = Arrays.asList(
@@ -81,18 +83,32 @@ class Solution {
 
         // 7- Find the list of students whose age is less than 30
 
-        List<Student> li = list.stream().filter(student->student.getAge()>30).collect(Collectors.toList());
+        List<Student> li = list.stream().filter(student -> student.getAge() > 30).collect(Collectors.toList());
         System.out.println(li);
 
         System.out.println();
 
         // 8- Find the list of students whose rank is in between 50 and 100
-        List<Student> liStudents = list.stream().filter(student->(student.getAge()>=50&&student.getAge()<=100)).collect(Collectors.toList());
+        List<Student> liStudents = list.stream().filter(student -> (student.getAge() >= 50 && student.getAge() <= 100))
+                .collect(Collectors.toList());
         System.out.println(liStudents);
 
         System.out.println();
 
         // 9- Find the average age of male and female students
+        Map<String, Double> avgAge = list.stream().collect(Collectors.groupingBy(
+                student -> student.getGender(), Collectors.averagingInt(student -> student.getAge())));
+        for (Map.Entry m : avgAge.entrySet()) {
+            System.out.println(m.getKey() + " " + m.getValue());
+        }
+
+        System.out.println();
+        // 10- Find the department who is having maximum number of students
+
+        java.util.Map.Entry<String, Long> maxStd = list.stream().collect(Collectors.groupingBy(
+                std -> std.getDepartmantName(), Collectors.counting())).entrySet().stream()
+                .max(Map.Entry.comparingByValue()).get();
+        System.out.println(maxStd.getKey() + " " + maxStd.getValue());
 
     }
 }
