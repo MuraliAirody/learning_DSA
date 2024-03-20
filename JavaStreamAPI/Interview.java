@@ -3,6 +3,7 @@ package JavaStreamAPI;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Interview {
@@ -34,6 +35,7 @@ class Solution {
             System.out.println(std);
         }
         System.out.println();
+
         // 2- Group The Student By Department Names
         Map<String, List<String>> map = list.stream().collect(Collectors.groupingBy(
                 std -> std.getDepartmantName(),
@@ -42,6 +44,20 @@ class Solution {
         for (Map.Entry m : map.entrySet()) {
             System.out.println(m.getKey() + " " + m.getValue());
         }
+        System.out.println();
+
+        // 3- Find the total count of student using stream
+
+        long count = list.stream().count();
+        System.out.println(count);
+
+        System.out.println();
+
+        // 4- Find the max age of student
+
+        Student st = list.stream().max((student1,student2)->student1.getAge()>student2.getAge()?1:-1).get();
+
+        System.out.println(st.getFirstName());
     }
 }
 
