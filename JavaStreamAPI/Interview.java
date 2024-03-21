@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import javax.swing.RowFilter.Entry;
 
 public class Interview {
     public static void main(String[] args) {
@@ -89,7 +88,8 @@ class Solution {
         System.out.println();
 
         // 8- Find the list of students whose rank is in between 50 and 100
-        List<Student> liStudents = list.stream().filter(student -> (student.getAge() >= 50 && student.getAge() <= 100))
+        List<Student> liStudents = list.stream()
+                .filter(student -> (student.getRank() >= 50 && student.getRank() <= 100))
                 .collect(Collectors.toList());
         System.out.println(liStudents);
 
@@ -108,8 +108,56 @@ class Solution {
         java.util.Map.Entry<String, Long> maxStd = list.stream().collect(Collectors.groupingBy(
                 std -> std.getDepartmantName(), Collectors.counting())).entrySet().stream()
                 .max(Map.Entry.comparingByValue()).get();
+
         System.out.println(maxStd.getKey() + " " + maxStd.getValue());
 
+        System.out.println();
+        // 11- Find the Students who stays in Delhi and sort them by their names
+
+        // Map<String, List<String>> delhiStudents = list.stream().collect(
+        // Collectors.groupingBy(std -> std.getCity(),
+        // Collectors.mapping(std -> std.getFirstName(), Collectors.toList())));
+        // for(Map.Entry m:delhiStudents.entrySet()){
+        // System.out.println(m.getKey()+" "+m.getValue());
+        // }
+
+        List<String> delhiStd = list.stream().filter(std -> std.getCity().equals("Karnataka"))
+                .map(std -> std.getFirstName()).sorted().collect(Collectors.toList());
+        System.out.println(delhiStd);
+
+        System.out.println();
+        // 12- Find the average rank in all departments
+
+        Map<String, Double> avgRank = list.stream().collect(
+                Collectors.groupingBy(std -> std.getDepartmantName(),
+                        Collectors.averagingInt(std -> std.getRank())));
+        for (Map.Entry m : avgRank.entrySet()) {
+            System.out.println(m.getKey() + " " + m.getValue());
+        }
+
+        System.out.println();
+        // 13- Find the highest rank in each department
+
+        Map<Object, Optional<Student>> highRank = list.stream().collect(
+                Collectors.groupingBy(std -> std.getDepartmantName(),
+                        Collectors.maxBy((std1, std2) -> std1.getRank() > std2.getRank() ? 1 : -1)));
+        System.out.println(highRank);
+
+        System.out.println();
+
+        // 14- Find the list of students and sort them by their rank
+        List<String> studentNames = list.stream().
+                sorted((std1,std2)->std1.getRank()>std2.getRank()?1:-1).map(std->std.getFirstName())
+                .collect(Collectors.toList());
+        System.out.println(studentNames);        
+
+        System.out.println();
+        //15- Find the student who has second rank
+
+        String secondNames = list.stream().
+                sorted((std1,std2)->std1.getRank()>std2.getRank()?1:-1).map(std->std.getFirstName())
+                .skip(1).findFirst().get();
+        System.out.println(secondNames);        
     }
 }
 
