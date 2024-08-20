@@ -1,6 +1,7 @@
-import java.util.*;
-class TUF{
-static boolean ArmstrongNumber(int n)
+package Math;
+
+class ArmStrongNumber{
+static boolean armstrongNumber(int n)
 {
     int originalno = n;
     int count = 0;
@@ -19,10 +20,10 @@ static boolean ArmstrongNumber(int n)
     }
     return (sumofpower == originalno);
 }
-public static void main(String args[])
+public static void main(String[] args)
 {
     int n1 = 153;
-    if (ArmstrongNumber(n1))
+    if (armstrongNumber(n1))
     {
         System.out.println("Yes, it is an Armstrong Number\n");
     }

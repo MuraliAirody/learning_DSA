@@ -1,7 +1,7 @@
 public class LargestOddNumber {
     public static void main(String[] args) {
         Solution sl = new Solution();
-        String ans  =  sl.largestOddNumber("7542351161");
+        String ans  =  sl.largestOddNumber("754235116");
 
         System.out.println("ans: "+ans);
         

@@ -21,7 +21,7 @@ public class Stock_Sell {
     //     return maxProf;
     // }
 
-    public int maxProfit(int[] prices) {
+    public static int maxProfit(int[] prices) {
         int min = prices[0];
         int profit = 0;
         for(int i=1;i<prices.length;i++){

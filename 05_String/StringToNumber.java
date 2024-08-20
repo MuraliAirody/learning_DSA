@@ -2,14 +2,13 @@ import java.util.HashMap;
 
 public class StringToNumber {
     public static void main(String[] args) {
-        String num = Solution.convert("zero double six eight triple four");
-
+        String num = Solution1.convert("zero double six eight triple four");
         System.out.println(num);
     }
 }
 
 
-class Solution{
+class Solution1{
     public static String convert(String s){
         HashMap<String,String>  map = new HashMap<>();
         map.put("one", "1");
