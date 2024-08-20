@@ -6,7 +6,7 @@ public class LongestPrefix {
         // String[] arr = {"cluster", "clue", "club","clutch","clumsy"};
         String[] arr = {"hello", "world"};
 
-        String ans =  new Solution().longestCommonPrefix(arr, arr.length);
+        String ans =  new SolutionLongestPrefix().longestCommonPrefix(arr, arr.length);
 
         System.out.println(ans);
     }
@@ -64,7 +64,7 @@ public class LongestPrefix {
          
 //     }
 // }
-class Solution{
+class SolutionLongestPrefix{
     String longestCommonPrefix(String arr[], int n){
 
         StringBuilder s = new StringBuilder();

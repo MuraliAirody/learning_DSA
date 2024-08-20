@@ -1,15 +1,15 @@
 import java.util.Arrays;
 
-public class LongestCommonPrifix {
+public class LongestCommonPrefix {
     public static void main(String[] args) {
-        Solution sl = new Solution();
+        SolutionLongestCommonPrefix sl = new SolutionLongestCommonPrefix();
         String[] strs = {"flower","flow","flight"};
         String ans = sl.longestCommonPrefix(strs);
 
         System.out.println(ans);
     }
 }
-class Solution {
+class SolutionLongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {
         Arrays.sort(strs);
 

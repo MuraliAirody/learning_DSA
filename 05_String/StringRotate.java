@@ -1,12 +1,12 @@
 public class StringRotate {
     public static void main(String[] args) {
         // Boolean ans = new Solution().isRotated("amazon", "azonam");
-        Boolean ans = new Solution().isRotated("daxjheq", "eqdaxjh");
+        Boolean ans = SolutionStringRotate.isRotated("daxjheq", "eqdaxjh");
 
         System.out.println(ans);
     }
 }
-class Solution
+class SolutionStringRotate
 {
     //Function to check if a string can be obtained by rotating
     //another string by exactly 2 places.

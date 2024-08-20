@@ -1,6 +1,6 @@
 public class ReverseASCII_Password {
     public static void main(String[] args) {
-        String ans = Solution.ascii("796115110113721110141108");
+        String ans = SolutionReverseASCII_Password.ascii("796115110113721110141108");
 
         System.out.println(ans);
         // System.out.println(ans.length());
@@ -8,7 +8,7 @@ public class ReverseASCII_Password {
 }
 
 
-class Solution{
+class SolutionReverseASCII_Password{
     public static String ascii(String s){
       StringBuilder rev = new StringBuilder(s).reverse();
 

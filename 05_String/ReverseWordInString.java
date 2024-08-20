@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class ReverseWordInString {
     public static void main(String[] args) {
-        Solution sl = new Solution();
+        SolutionReverseWordInString sl = new SolutionReverseWordInString();
         String s = sl.reverseWords("a good   example");
         // String s = sl.reverseWords(" hello world ");
 
@@ -10,7 +10,7 @@ public class ReverseWordInString {
     }
 }
 
-// class Solution {
+// class SolutionReverseWordInString {
 // public String reverseWords(String s) {
 // String[] sArr = s.trim().split("\\s+");
 // String rev = "";
@@ -54,7 +54,7 @@ public class ReverseWordInString {
 // }
 // }
 
-class Solution {
+class SolutionReverseWordInString {
     public String reverseWords(String s) {
         int left = 0;
         int right = s.length() - 1;
@@ -91,8 +91,9 @@ class Solution {
         return ans;
     }
 }
+/*
 
-class Solution {
+class SolutionReverseWordInString {
     public String reverseWords(String s) {
         int left = 0;
         int right = s.length() - 1;
@@ -129,3 +130,4 @@ class Solution {
         return ans.toString();
     }
 }
+*/

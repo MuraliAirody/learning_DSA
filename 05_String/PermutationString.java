@@ -2,24 +2,24 @@ import java.util.*;
 
 public class PermutationString {
     public static void main(String[] args) {
-      String s ="ABC";
-      Solution obj = new Solution();
-      List<String> ans = obj.find_permutation(s);
+        String s = "ABC";
+        SolutionPermutationString obj = new SolutionPermutationString();
+        List<String> ans = obj.find_permutation(s);
 
-      
-      ans.stream().forEach((ss)->System.out.println(ss));
+
+        ans.stream().forEach((ss) -> System.out.println(ss));
 
     }
 }
 
-class Solution {
+class SolutionPermutationString {
     public List<String> find_permutation(String S) {
 
         HashSet<String> set = new HashSet<>();
         permute(S.toCharArray(), 0, set);
-        
+
         ArrayList<String> list = new ArrayList<>(set);
-        
+
         Collections.sort(list);
 
         return list;

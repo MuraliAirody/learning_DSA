@@ -1,14 +1,14 @@
 
 public class RemoveParentheses {
     public static void main(String[] args) {
-        Solution sl = new Solution();
+        SolutionRemoveParentheses sl = new SolutionRemoveParentheses();
         String ans = sl.removeOuterParentheses("(()())(())");
 
         System.out.println(ans);
     }
 }
 
-class Solution {
+class SolutionRemoveParentheses {
     public String removeOuterParentheses(String s) {
         String ans = "";
         int bal = 0;

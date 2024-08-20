@@ -2,13 +2,13 @@ import java.util.Arrays;
 
 public class MinLengthString {
     public static void main(String[] args) {
-        int ans = Solution.minLength("PPPPPP@PPP@PP$PP");
+        int ans = SolutionMinLengthString.minLength("PPPPPP@PPP@PP$PP");
 
         System.out.println(ans);
     }
 }
 
-class Solution{
+class SolutionMinLengthString{
     public static int minLength(String s){
       int minLength = Integer.MAX_VALUE;
 

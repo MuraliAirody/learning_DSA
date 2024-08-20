@@ -1,11 +1,11 @@
-class longestPalindrome{
+class LongestPalindrome{
     public static void main(String[] args) {
-        String ans = Solution.longestPalindrome("aaaabbaabb");
+        String ans = SolutionLongestPalindrome.longestPalindrome("aaaabbaabb");
         System.out.println(ans);
     }
 }
 
-class Solution {
+class SolutionLongestPalindrome {
     public static String longestPalindrome(String S) {
          String ans = "";
         
