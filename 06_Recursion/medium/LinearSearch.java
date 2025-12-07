@@ -24,6 +24,8 @@ public class LinearSearch {
 
         linearSearchAllIndex(new int[]{1, 2, 1, 3, 4, 5, 6},1,0);
         System.out.println(list);
+
+        System.out.println(linearSearchAllIndexList(new int[]{1, 2, 1, 3, 4, 5, 6},1,0,new ArrayList<>()));
     }
 
     private static int linearSearch(int[] arr, int target,int i) {
@@ -57,5 +59,16 @@ public class LinearSearch {
         linearSearchAllIndex(arr,target,++i);
     }
 
+    private static ArrayList<Integer>
+            linearSearchAllIndexList(int[] arr,int target,int i, ArrayList<Integer> list){
+        if(i>arr.length-1){
+            return list;
+        }
+        if(arr[i]==target){
+            list.add(i);
+        }
+
+        return  linearSearchAllIndexList(arr,target,++i,list);
+    }
 
 }
