@@ -1,6 +1,6 @@
 public class SortedOrNot {
     public static void main(String[] args) {
-        int[] arr = {1,3,4,8,5};
+        int[] arr = {1,3,4,8};
         boolean res = sortedOrNot(arr,0);
         if(res){
             System.out.println("Sorted array");
@@ -13,6 +13,11 @@ public class SortedOrNot {
         if(index==arr.length-1){
             return true;
         }
-        return arr[index]<arr[index+1] && sortedOrNot(arr,index+1);
+
+        if(arr[index]>arr[index+1]){
+            return false;
+        }
+
+        return sortedOrNot(arr,index+1);
     }
 }
