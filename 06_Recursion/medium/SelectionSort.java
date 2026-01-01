@@ -7,6 +7,10 @@ public class SelectionSort {
         int[] arr = {1,7,9,2,3,4};
         recursionSelectionSort(arr,0,1,0);
         System.out.println(Arrays.toString(arr));
+
+        int[] arr1 = {1,7,9,2,3,4};
+        recursionSelectionSortMaxEle(arr1,arr.length-1,1,0);
+        System.out.println(Arrays.toString(arr1));
     }
 
 
@@ -44,5 +48,22 @@ public class SelectionSort {
         }
     }
 
+    private static void recursionSelectionSortMaxEle(int[] arr, int r, int c,int max) {
+        if(r==0){
+            return;
+        }
+
+        if(c<=r){
+            if(arr[max]<arr[c]){
+                max = c;
+            }
+            recursionSelectionSortMaxEle(arr,r,c+1,max);
+        }else{
+            int temp = arr[max];
+            arr[max] = arr[r];
+            arr[r] = temp;
+            recursionSelectionSortMaxEle(arr,r-1,0,0);
+        }
+    }
 
 }
