@@ -15,9 +15,7 @@ class SolutionQuick {
         int i = low - 1;
 
         for (int j = low; j < high; j++) {
-            // If element <= pivot
             if (arr[j] <= pivot) {
-                // Increment i and swap
                 i++;
                 int temp = arr[i];
                 arr[i] = arr[j];
