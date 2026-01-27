@@ -1,7 +1,7 @@
 public class RotatedBinarySearch {
     public static void main(String[] args) {
         int[] arr = {5,6,7,8,1,2,3,4};
-        int target = 3;
+        int target = 4;
         int result = rotatedBinarySearch(0,arr.length-1,arr,target);
 
         System.out.println(result);
@@ -19,7 +19,7 @@ public class RotatedBinarySearch {
             return mid;
         }
         if (arr[start] <= arr[mid]) {
-            if (target >= arr[start] && target < arr[mid]) {
+            if (target >= arr[start] && target <= arr[mid]) {
                 return rotatedBinarySearch(start, mid - 1, arr, target);
             } else {
                 return rotatedBinarySearch(mid + 1, end, arr, target);
@@ -27,7 +27,7 @@ public class RotatedBinarySearch {
         }
         // Right half sorted
         else {
-            if (target > arr[mid] && target <= arr[end]) {
+            if (target >= arr[mid] && target <= arr[end]) {
                 return rotatedBinarySearch(mid + 1, end, arr, target);
             } else {
                 return rotatedBinarySearch(end, mid - 1, arr, target);
