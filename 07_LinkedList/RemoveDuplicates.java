@@ -43,26 +43,25 @@ public class RemoveDuplicates {
         }
     }
 
-    public void removeDuplicate(ListNode head){
+    public void removeDuplicate() {
+
+        if (head == null) return;
 
         ListNode first = head;
         ListNode second = head.next;
 
-        while (second!=null){
-            if(first.val==second.val){
-                second=second.next;
-                if(second==null){
-                    first.next = null;
-                    tail = first;
-                }
-            }else{
+        while (second != null) {
+            if (first.val == second.val) {
+                second = second.next;
                 first.next = second;
+            } else {
                 first = second;
                 second = second.next;
             }
         }
-
+        tail = first;
     }
+
 
     public static void main(String[] args) {
 
@@ -70,9 +69,6 @@ public class RemoveDuplicates {
 
         list.insertFirst(4);
         list.insertFirst(4);
-        list.insertFirst(4);
-        list.insertFirst(3);
-        list.insertFirst(2);
         list.insertFirst(2);
         list.insertFirst(1);
         list.insertFirst(1);
@@ -80,7 +76,7 @@ public class RemoveDuplicates {
 
         list.display();
 
-        list.removeDuplicate(list.head);
+        list.removeDuplicate();
 
         list.display();
 
