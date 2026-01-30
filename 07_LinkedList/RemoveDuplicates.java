@@ -81,6 +81,9 @@ public class RemoveDuplicates {
         list.display();
 
         System.out.println(list.tail.val);
+
+
+
     }
 
 }

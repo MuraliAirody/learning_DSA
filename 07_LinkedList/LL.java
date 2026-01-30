@@ -148,4 +148,33 @@ public class LL {
             System.out.print("end\n");
         }
     }
+
+
+    public LL mergeTwoSortedList(LL l1, LL l2){
+        Node temp1 = l1.head;
+        Node temp2 = l2.head;
+
+        LL ans = new LL();
+
+        while(temp1!=null && temp2!=null) {
+            if (temp1.value < temp2.value) {
+                ans.insertLast(temp1.value);
+                temp1 = temp1.next;
+            } else {
+                ans.insertLast(temp2.value);
+                temp2 = temp2.next;
+            }
+        }
+            while (temp1!=null){
+                ans.insertLast(temp1.value);
+                temp1 = temp1.next;
+            }
+
+            while (temp2!=null){
+                ans.insertLast(temp2.value);
+                temp2 = temp2.next;
+            }
+
+            return ans;
+    }
 }
