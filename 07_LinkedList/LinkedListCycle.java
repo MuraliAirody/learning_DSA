@@ -85,9 +85,13 @@ public class LinkedListCycle {
         list.insert(3);
         list.insert(4);
         list.insert(5);
+        list.insert(6);
+        list.insert(7);
+        list.insert(8);
+
 
         // Create cycle: tail -> node with value 3
-        list.createCycle(3);
+        list.createCycle(4);
 
         System.out.println("Cycle present: " + list.hasCycle());
 
