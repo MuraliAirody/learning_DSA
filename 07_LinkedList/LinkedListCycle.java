@@ -47,6 +47,29 @@ public class LinkedListCycle {
         return false;
     }
 
+    public int lengthOfCycle() {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        int length = 0;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                ListNode temp = slow;
+
+                do {
+                  temp = temp.next;
+                  length++;
+                }while (temp!=fast);
+                return length;
+            }
+        }
+        return 0;
+    }
+
     // Find start of cycle
     public ListNode detectCycleStart() {
         ListNode slow = head;
@@ -101,5 +124,7 @@ public class LinkedListCycle {
         } else {
             System.out.println("No cycle found");
         }
+
+        System.out.println(list.lengthOfCycle());
     }
 }
